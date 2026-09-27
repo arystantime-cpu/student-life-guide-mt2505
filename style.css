@@ -298,8 +298,30 @@ img {
 
 .campus-list li {
   margin-bottom: 10px;
-=======
-.header{
-    
->>>>>>> Stashed changes
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.step-card {
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #d9e2ec;
+  border-radius: 10px;
+}
+
+.platform-grid,
+.answers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
