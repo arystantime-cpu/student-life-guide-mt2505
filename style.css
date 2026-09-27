@@ -267,3 +267,34 @@ img {
   grid-template-columns: 1fr 1fr;
   gap: 25px;
 }
+
+.campus-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.campus-card img {
+  height: 220px;
+  border-radius: 8px;
+}
+
+.map-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 25px;
+}
+
+.map-layout .map-image {
+  height: auto;
+  border-radius: 8px;
+}
+
+.campus-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.campus-list li {
+  margin-bottom: 10px;
+}
