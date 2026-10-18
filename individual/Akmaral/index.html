@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akmaral's JavaScript Practice</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 25px;
+      font-family: Arial, sans-serif;
+      background: #f5efe9;
+      color: #49372b;
+      line-height: 1.5;
+    }
+
+    main {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 15px;
+      padding: 18px;
+      background: white;
+      border: 1px solid #d8c6b6;
+      border-radius: 6px;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    button {
+      padding: 9px 16px;
+      background: #70513b;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #49372b;
+    }
+
+    button:focus-visible {
+      outline: 3px solid #49372b;
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>JavaScript Practice</h1>
+    <p><strong>Akmaral Shyngazy — MT-2505</strong></p>
+    <p>Open F12 → Console to see the results.</p>
+
+    <section>
+      <h2>Task 6 — About me</h2>
+      <p>Variables and their data types.</p>
+      <button type="button" onclick="showPersonalInfo()">Run</button>
+    </section>
+
+    <section>
+      <h2>Task 7 — Welcome</h2>
+      <p>A greeting using user input.</p>
+      <button type="button" onclick="showGreeting()">Run</button>
+    </section>
+
+    <section>
+      <h2>Task 8 — Calculator</h2>
+      <p>Enter two numbers. Use 12 and 5 for the test.</p>
+      <button type="button" onclick="runCalculator()">Run</button>
+    </section>
+
+    <section>
+      <h2>Task 9 — My name</h2>
+      <p>Basic string operations.</p>
+      <button type="button" onclick="exploreStrings()">Run</button>
+    </section>
+
+    <section>
+      <h2>Task 10 — Counter</h2>
+      <p>Changing a number with operators.</p>
+      <button type="button" onclick="changeCounter()">Run</button>
+    </section>
+
+    <section>
+      <h2>Task 11 — Age formula</h2>
+      <p>The arithmetic exercise from the lecture.</p>
+      <button type="button" onclick="calculateAges()">Run</button>
+    </section>
+
+    <section>
+      <h2>Task 12 — Functions</h2>
+      <p>Greetings, sums and rectangle areas.</p>
+      <button type="button" onclick="testFunctions()">Run</button>
+    </section>
+  </main>
+
+  <script>
+    function showPersonalInfo() {
+      console.log("TASK 6: PERSONAL INFORMATION");
+
+      const studentName = "Akmaral Shyngazy";
+      const age = 19;
+      const isStudent = true;
+      let favouriteColour = "brown";
+
+      console.log("Name: " + studentName);
+      console.log("Name type: " + typeof studentName);
+
+      console.log("Age: " + age);
+      console.log("Age type: " + typeof age);
+
+      console.log("Student: " + isStudent);
+      console.log("Student type: " + typeof isStudent);
+
+      console.log("Favourite colour: " + favouriteColour);
+      console.log("Colour type: " + typeof favouriteColour);
+
+      favouriteColour = "beige";
+      console.log("Colour after reassignment: " + favouriteColour);
+
+      console.log(
+        "I use const when a variable is not reassigned. " +
+        "I use let when its value needs to change."
+      );
+    }
+
+    function showGreeting() {
+      console.log("TASK 7: GREETING");
+
+      const visitor = prompt("What is your name?");
+
+      if (visitor === null) {
+        console.log("The greeting was cancelled.");
+        return;
+      }
+
+      alert("Welcome, " + visitor + "!");
+
+      const name = "Akmaral Shyngazy";
+      const group = "MT-2505";
+      const introduction = "Hello! I am " + name +
+        " from group " + group + ".";
+
+      console.log(introduction);
+    }
+
+    function runCalculator() {
+      console.log("TASK 8: CALCULATOR");
+
+      const firstInput = prompt("Enter the first number:");
+      const secondInput = prompt("Enter the second number:");
+
+      if (firstInput === null || secondInput === null) {
+        console.log("Calculation cancelled.");
+        return;
+      }
+
+      const firstNumber = Number(firstInput);
+      const secondNumber = Number(secondInput);
+
+      if (
+        firstInput.trim() === "" ||
+        secondInput.trim() === "" ||
+        !Number.isFinite(firstNumber) ||
+        !Number.isFinite(secondNumber)
+      ) {
+        console.log("Please enter two valid numbers.");
+        return;
+      }
+
+      if (secondNumber === 0) {
+        console.log("The second number must not be zero.");
+        return;
+      }
+
+      const sum = firstNumber + secondNumber;
+      const difference = firstNumber - secondNumber;
+      const product = firstNumber * secondNumber;
+      const quotient = firstNumber / secondNumber;
+      const remainder = firstNumber % secondNumber;
+
+      console.log("Sum = " + sum);
+      console.log("Difference = " + difference);
+      console.log("Product = " + product);
+      console.log("Quotient = " + quotient);
+      console.log("Remainder = " + remainder);
+
+      console.log('"12" + "5" = ' + ("12" + "5"));
+      console.log(
+        'Number("12") + Number("5") = ' +
+        (Number("12") + Number("5"))
+      );
+
+      console.log(
+        "Strings are joined together. Converted numbers are added."
+      );
+    }
+
+    function exploreStrings() {
+      console.log("TASK 9: STRINGS");
+
+      const name = "Akmaral Shyngazy";
+
+      const nameLength = name.length;
+      const capitalName = name.toUpperCase();
+      const smallName = name.toLowerCase();
+      const beginning = name.slice(0, 3);
+
+      console.log("Original name: " + name);
+      console.log("Number of characters: " + nameLength);
+      console.log("Uppercase: " + capitalName);
+      console.log("Lowercase: " + smallName);
+      console.log("First three characters: " + beginning);
+
+      const firstSentencePart = "My favourite colour";
+      const secondSentencePart = "is brown.";
+
+      console.log(firstSentencePart + " " + secondSentencePart);
+
+      console.log(
+        "length is a property, so it has no parentheses. " +
+        "toUpperCase(), toLowerCase() and slice() are methods."
+      );
+    }
+
+    function changeCounter() {
+      console.log("TASK 10: COUNTER");
+
+      let counter = 10;
+      console.log("Initial value: " + counter);
+
+      counter++;
+      console.log("After ++: " + counter + " — added 1");
+
+      counter--;
+      console.log("After --: " + counter + " — subtracted 1");
+
+      counter += 5;
+      console.log("After += 5: " + counter + " — added 5");
+
+      counter -= 3;
+      console.log("After -= 3: " + counter + " — subtracted 3");
+
+      counter *= 2;
+      console.log("After *= 2: " + counter + " — multiplied by 2");
+
+      counter /= 4;
+      console.log("After /= 4: " + counter + " — divided by 4");
+    }
+
+    function calculateAges() {
+      console.log("TASK 11: AGE FORMULA");
+
+      let dogAge = 2;
+      let humanAge = (dogAge - 2) * 4 + 21;
+
+      console.log(
+        "For dog age " + dogAge +
+        ", the calculated human age is " + humanAge + "."
+      );
+
+      dogAge = 5;
+      humanAge = (dogAge - 2) * 4 + 21;
+
+      console.log(
+        "For dog age " + dogAge +
+        ", the calculated human age is " + humanAge + "."
+      );
+
+      console.log("The formula is used as an arithmetic exercise.");
+    }
+
+    function greetUser(name) {
+      console.log("Welcome, " + name + "!");
+    }
+
+    function calculateSum(a, b) {
+      return a + b;
+    }
+
+    function calculateRectangleArea(width, height) {
+      return width * height;
+    }
+
+    function testFunctions() {
+      console.log("TASK 12: FUNCTIONS");
+
+      greetUser("Akmaral");
+      greetUser("Yerzhan");
+
+      const firstSum = calculateSum(6, 9);
+      const secondSum = calculateSum(14, 3);
+
+      console.log("6 + 9 = " + firstSum);
+      console.log("14 + 3 = " + secondSum);
+
+      const firstArea = calculateRectangleArea(7, 3);
+      const secondArea = calculateRectangleArea(5, 8);
+
+      console.log("Area of a 7 by 3 rectangle: " + firstArea);
+      console.log("Area of a 5 by 8 rectangle: " + secondArea);
+
+      console.log(
+        "Parameters are the names in a function definition."
+      );
+      console.log(
+        "Arguments are the values supplied when calling a function."
+      );
+      console.log(
+        "return gives a result back to the caller."
+      );
+    }
+  </script>
+</body>
+</html>
