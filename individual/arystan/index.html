@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arystan | JavaScript exercises</title>
+
+  <style>
+    body {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      color: #263c52;
+      background: #f8fafc;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript exercises</h1>
+  <p>Arystan Abdyshev — MT-2505</p>
+  <p>Open the browser console and select a task.</p>
+
+  <button type="button" onclick="task6()">Task 6: Variables</button>
+  <button type="button" onclick="task7()">Task 7: Greeting</button>
+  <button type="button" onclick="task8()">Task 8: Arithmetic</button>
+  <button type="button" onclick="task9()">Task 9: Strings</button>
+  <button type="button" onclick="task10()">Task 10: Operators</button>
+  <button type="button" onclick="task11()">Task 11: Dog age</button>
+  <button type="button" onclick="task12()">Task 12: Functions</button>
+
+  <script>
+    const fullName = "Arystan Abdyshev";
+    const group = "MT-2505";
+
+    function task6() {
+      console.log("TASK 6 — Variables and data types");
+
+      const age = 20;
+      const isStudent = true;
+      let favouriteColour = "dark red";
+
+      console.log("Full name:", fullName, typeof fullName);
+      console.log("Age:", age, typeof age);
+      console.log("Student:", isStudent, typeof isStudent);
+      console.log(
+        "Favourite colour:",
+        favouriteColour,
+        typeof favouriteColour
+      );
+
+      favouriteColour = "green";
+      console.log("Colour after reassignment:", favouriteColour);
+
+      console.log(
+        "const is suitable for values that are not reassigned. " +
+        "let allows a variable to be reassigned."
+      );
+    }
+
+    function task7() {
+      console.log("TASK 7 — Input and a greeting");
+
+      const enteredName = prompt("What is your name?");
+      alert(`Hello, ${enteredName}!`);
+
+      const greeting = `My name is ${fullName} and my group is ${group}.`;
+      console.log(greeting);
+    }
+
+    function task8() {
+      console.log("TASK 8 — Arithmetic");
+
+      const first = Number(prompt("Enter the first number. Try 12."));
+      const second = Number(
+        prompt("Enter a non-zero second number. Try 5.")
+      );
+
+      if (second === 0) {
+        console.log("Use a non-zero second number.");
+        return;
+      }
+
+      console.log("Sum:", first + second);
+      console.log("Difference:", first - second);
+      console.log("Product:", first * second);
+      console.log("Quotient:", first / second);
+      console.log("Remainder:", first % second);
+
+      console.log('String addition: "12" + "5" =', "12" + "5");
+      console.log("Number addition:", Number("12") + Number("5"));
+
+      console.log(
+        "The + operator joins strings, but adds numbers after Number() conversion."
+      );
+    }
+
+    function task9() {
+      console.log("TASK 9 — Strings");
+
+      console.log("Full name:", fullName);
+      console.log("Length:", fullName.length);
+      console.log("Uppercase:", fullName.toUpperCase());
+      console.log("Lowercase:", fullName.toLowerCase());
+      console.log("First three characters:", fullName.slice(0, 3));
+
+      const firstPart = "I study at";
+      const secondPart = "Astana IT University.";
+
+      console.log(firstPart + " " + secondPart);
+
+      console.log(
+        "length is a property without parentheses. " +
+        "toUpperCase(), toLowerCase() and slice() are methods."
+      );
+    }
+
+    function task10() {
+      console.log("TASK 10 — Increment and assignment operators");
+
+      let counter = 10;
+      console.log("Start:", counter);
+
+      counter++;
+      console.log("++ adds 1:", counter);
+
+      counter--;
+      console.log("-- subtracts 1:", counter);
+
+      counter += 5;
+      console.log("+= 5 adds 5:", counter);
+
+      counter -= 3;
+      console.log("-= 3 subtracts 3:", counter);
+
+      counter *= 2;
+      console.log("*= 2 multiplies by 2:", counter);
+
+      counter /= 4;
+      console.log("/= 4 divides by 4:", counter);
+    }
+
+    function task11() {
+      console.log("TASK 11 — Dog age calculation");
+
+      let dogAge = 2;
+      let humanAge = (dogAge - 2) * 4 + 21;
+
+      console.log(
+        `Dog age: ${dogAge}. Calculated human age: ${humanAge}.`
+      );
+
+      dogAge = 5;
+      humanAge = (dogAge - 2) * 4 + 21;
+
+      console.log(
+        `Dog age: ${dogAge}. Calculated human age: ${humanAge}.`
+      );
+
+      console.log(
+        "This formula is used only as an arithmetic exercise."
+      );
+    }
+
+    function greetUser(name) {
+      console.log(`Hello, ${name}!`);
+    }
+
+    function calculateSum(a, b) {
+      return a + b;
+    }
+
+    function calculateRectangleArea(width, height) {
+      return width * height;
+    }
+
+    function task12() {
+      console.log("TASK 12 — Functions");
+
+      greetUser("Arystan");
+      greetUser("Daryn");
+
+      console.log("Sum of 12 and 5:", calculateSum(12, 5));
+      console.log("Sum of 3 and 7:", calculateSum(3, 7));
+
+      console.log(
+        "Area of 4 by 6:",
+        calculateRectangleArea(4, 6)
+      );
+      console.log(
+        "Area of 3 by 5:",
+        calculateRectangleArea(3, 5)
+      );
+
+      console.log(
+        "Parameters are names in the function definition, such as a and b."
+      );
+      console.log(
+        "Arguments are values passed to a function, such as 12 and 5."
+      );
+      console.log(
+        "return sends the result back to the place where the function was called."
+      );
+    }
+  </script>
+</body>
+</html>

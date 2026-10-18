@@ -39,7 +39,9 @@ Main features
 - Six-item checklist grid
 - Working links to LMS, Digital University, Microsoft 365 and the official AITU website
 - Semantic HTML and meaningful image alternative text
-- No JavaScript or CSS frameworks
+- Bootstrap 5
+- JavaScript
+- HTML5 form validation
 
 Technologies
 
@@ -84,3 +86,40 @@ Team
 - Arystan Abdyshev
 - Yerzhan Adiman
 - Daryn Takhir
+
+Assignment 5 — Forms and Validation
+
+How to open
+
+Open index.html and select "Open forms", or open forms.html directly.
+
+The forms use Bootstrap from a CDN, so an internet connection is needed
+for Bootstrap styling.
+
+Open individual/arystan/index.html for Arystan's JavaScript exercises.
+Open the browser console and use the task buttons.
+Other members' individual exercise paths should be listed here when added.
+
+Contact form
+
+The form contains Name, Email and Message fields.
+
+- All fields are required.
+- Name: at least 2 characters.
+- Email: validated using type="email".
+- Message: 10–500 characters.
+- Bootstrap feedback appears after submitting.
+- A successful attempt displays a demonstration message.
+
+Registration form
+
+The form contains first name, last name, email, password,
+password confirmation, gender, interests and country.
+
+- First and last names: required, at least 2 characters.
+- Email: required and validated using type="email".
+- Passwords: required, at least 8 characters.
+- JavaScript checks that both passwords match.
+- Gender and interests are optional.
+- Country is required.
+- Reset clears the values and validation feedback.
