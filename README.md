@@ -127,6 +127,9 @@ The page contains:
 - Task 10: equivalent mouse and keyboard focus interactions
 
 The page uses the external `individual/arystan/script.js` file and does not require the browser console.
+
+Open `individual/Akmaral/index.html` for Akmaral Shyngazy's individual DOM and events exercises. The page includes Tasks 6-10 and uses Yamaha R6, R7 and R125 images in Task 8.
+
 Other members' individual exercise paths should be listed here when added.
 
 Contact form
