@@ -114,8 +114,19 @@ Open index.html and select "Open forms", or open forms.html directly.
 The forms use Bootstrap from a CDN, so an internet connection is needed
 for Bootstrap styling.
 
-Open individual/arystan/index.html for Arystan's JavaScript exercises.
-Open the browser console and use the task buttons.
+### Assignment 5 Part 2 Arystan
+
+Open `individual/arystan/index.html` for Arystan Abdyshev's individual DOM and events exercises.
+
+The page contains:
+
+- Task 6: non-negative counter with Increase, Decrease and Reset buttons
+- Task 7: live text preview, character count and Clear button
+- Task 8: image, alt text and caption changes controlled by a select element
+- Task 9: key display with Enter submission and Escape clearing
+- Task 10: equivalent mouse and keyboard focus interactions
+
+The page uses the external `individual/arystan/script.js` file and does not require the browser console.
 Other members' individual exercise paths should be listed here when added.
 
 Contact form
