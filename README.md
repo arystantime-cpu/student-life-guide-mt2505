@@ -42,6 +42,7 @@ Main features
 - Bootstrap 5
 - JavaScript
 - HTML5 form validation
+- Assignment 5 Part 1 interactive page with five DOM and events tasks
 
 Technologies
 
@@ -59,9 +60,12 @@ student-life-guide-mt2505/
 |-- study.html
 |-- campus.html
 |-- start.html
+|-- interactive.html
 |-- css/
 |   |-- style.css
 |   `-- responsive.css
+|-- js/
+|   `-- part1.js
 |-- images/
 `-- README.md
 ```
@@ -71,6 +75,20 @@ How to open the website
 1. Download or clone the repository.
 2. Open the project folder.
 3. Open `index.html` in a web browser.
+
+## Assignment 5 Part 1 Teamwork
+
+Open `interactive.html` directly or select **Interactive Guide** in the main navigation.
+
+The page contains all five required teamwork features:
+
+- Task 0: a labelled name input and personalised welcome message
+- Task 1: a reversible light and dark theme toggle
+- Task 2: four independent and keyboard-accessible FAQ items
+- Task 3: live, case-insensitive title search across six resource cards
+- Task 4: a dynamic personal checklist with validation, item removal and a live count
+
+All interactions are implemented in the external `js/part1.js` file with `addEventListener()` and plain JavaScript.
 
 
 Links

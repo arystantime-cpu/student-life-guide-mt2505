@@ -108,6 +108,51 @@
   }
 }
 
+@media (max-width: 900px) {
+  .interactive-hero-inner,
+  .interactive-callout {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .feature-layout,
+  .search-heading {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .resource-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .interactive-hero {
+    padding: 48px 0;
+  }
+
+  .control-row {
+    flex-direction: column;
+  }
+
+  .control-row .button {
+    width: 100%;
+  }
+
+  .resource-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interactive-panel {
+    padding: 22px;
+  }
+
+  .dynamic-list li {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 600px) {
   .steps-grid,
   .platform-grid,

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive tools for exploring student life at Astana IT University.">
+  <title>Interactive Guide | AITU Student Guide</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/part1.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">AITU Student Guide</a>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="study.html">Study</a></li>
+          <li><a href="campus.html">Campus Life</a></li>
+          <li><a href="start.html">First Steps</a></li>
+          <li><a class="active" href="interactive.html" aria-current="page">Interactive Guide</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="interactive-hero">
+      <div class="container interactive-hero-inner">
+        <div>
+          <p class="eyebrow">Assignment 5 · Part 1 · Teamwork</p>
+          <h1>Explore AITU interactively</h1>
+          <p>Try the five clearly labelled DOM and events features below. Every control works with plain JavaScript in an external file.</p>
+        </div>
+        <button id="theme-toggle" class="button theme-button" type="button" aria-pressed="false">
+          Switch to dark theme
+        </button>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="task-0-title">
+      <div class="container feature-layout">
+        <div class="feature-heading">
+          <p class="task-label">Task 0</p>
+          <h2 id="task-0-title">Personal welcome</h2>
+          <p>Enter your name to receive a personalised message before you explore the guide.</p>
+        </div>
+
+        <div class="interactive-panel">
+          <label for="visitor-name">Your name</label>
+          <div class="control-row">
+            <input id="visitor-name" type="text" autocomplete="name" placeholder="For example, Amina">
+            <button id="welcome-button" class="button" type="button">Show welcome</button>
+          </div>
+          <p id="welcome-message" class="status-message" aria-live="polite">Your welcome message will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-lavender" aria-labelledby="task-1-title">
+      <div class="container feature-layout">
+        <div class="feature-heading">
+          <p class="task-label">Task 1</p>
+          <h2 id="task-1-title">Light and dark themes</h2>
+          <p>Use the theme button at the top of this page. The label always describes the next available action, and a second click restores the original theme.</p>
+        </div>
+
+        <div class="interactive-panel theme-preview" aria-hidden="true">
+          <span class="theme-swatch theme-swatch-primary"></span>
+          <span class="theme-swatch theme-swatch-secondary"></span>
+          <span class="theme-swatch theme-swatch-accent"></span>
+          <p>The page colours change by toggling one class on the body element.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="task-2-title">
+      <div class="container">
+        <div class="section-intro">
+          <p class="task-label">Task 2</p>
+          <h2 id="task-2-title">Student FAQ</h2>
+          <p>Open any question independently. The buttons work with a mouse, Enter or Space.</p>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-1">Where can I see my class schedule?<span class="faq-symbol" aria-hidden="true">+</span></button></h3>
+            <p id="faq-answer-1" class="faq-answer" hidden>Open Digital University and check the schedule for your group. Review it regularly because rooms can change.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-2">How do I find a classroom?<span class="faq-symbol" aria-hidden="true">+</span></button></h3>
+            <p id="faq-answer-2" class="faq-answer" hidden>Read the room code as building, block, floor and room number. For example, C1.3.240 is in block 3 on the second floor.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-3">Where are course materials published?<span class="faq-symbol" aria-hidden="true">+</span></button></h3>
+            <p id="faq-answer-3" class="faq-answer" hidden>Teachers publish syllabi, assignments and learning materials in the AITU LMS. Check every enrolled course after signing in.</p>
+          </article>
+
+          <article class="faq-item">
+            <h3><button class="faq-question" type="button" aria-expanded="false" aria-controls="faq-answer-4">What should I complete during my first week?<span class="faq-symbol" aria-hidden="true">+</span></button></h3>
+            <p id="faq-answer-4" class="faq-answer" hidden>Activate Microsoft 365, enter the LMS, check your schedule, find your classrooms, read each syllabus and save important contacts.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue" aria-labelledby="task-3-title">
+      <div class="container">
+        <div class="section-intro search-heading">
+          <div>
+            <p class="task-label">Task 3</p>
+            <h2 id="task-3-title">Search student resources</h2>
+            <p>Search by resource title. Letter case and spaces at the beginning or end are ignored.</p>
+          </div>
+          <div class="search-control">
+            <label for="resource-search">Search resources</label>
+            <input id="resource-search" type="search" placeholder="Try “library” or “LMS”">
+          </div>
+        </div>
+
+        <p id="result-count" class="result-count" aria-live="polite">6 resources found</p>
+        <p id="no-results" class="no-results" hidden>No results found. Try another title.</p>
+
+        <div class="resource-card-grid" id="resource-list">
+          <article class="card guide-card"><p class="card-kicker">Study</p><h3>Learning Management System</h3><p>Open course materials, assignments, grades and announcements.</p><a href="https://lms.astanait.edu.kz/" target="_blank" rel="noopener">Open LMS</a></article>
+          <article class="card guide-card"><p class="card-kicker">Planning</p><h3>Digital University Schedule</h3><p>Check your group schedule, classroom numbers and study week.</p><a href="start.html">View first steps</a></article>
+          <article class="card guide-card"><p class="card-kicker">Campus</p><h3>AITU Library</h3><p>Find a quiet place for reading, research and individual study.</p><a href="campus.html">Explore campus</a></article>
+          <article class="card guide-card"><p class="card-kicker">Account</p><h3>Microsoft 365</h3><p>Use university email, cloud files and Office applications.</p><a href="https://www.office.com/" target="_blank" rel="noopener">Open Microsoft 365</a></article>
+          <article class="card guide-card"><p class="card-kicker">Wellbeing</p><h3>Student Support Office</h3><p>Ask for help with university services and student questions.</p><a href="start.html">Find support</a></article>
+          <article class="card guide-card"><p class="card-kicker">Activities</p><h3>Cyber Arena</h3><p>Discover a campus space for sports, events and student activities.</p><a href="campus.html">See campus life</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="task-4-title">
+      <div class="container feature-layout">
+        <div class="feature-heading">
+          <p class="task-label">Task 4</p>
+          <h2 id="task-4-title">Build a personal checklist</h2>
+          <p>Add any recommendation or first-week task. Press Enter or use the Add item button, then remove individual items when they are complete.</p>
+        </div>
+
+        <div class="interactive-panel">
+          <form id="checklist-form" novalidate>
+            <label for="checklist-input">New checklist item</label>
+            <div class="control-row">
+              <input id="checklist-input" type="text" placeholder="For example, read the syllabus">
+              <button class="button" type="submit">Add item</button>
+            </div>
+          </form>
+
+          <p id="checklist-feedback" class="status-message" aria-live="polite">Add your first item.</p>
+          <p id="item-count" class="item-count" aria-live="polite">0 items</p>
+          <ul id="checklist-items" class="dynamic-list" aria-label="Personal checklist"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <strong>AITU Student Guide</strong>
+      <p>Made by Akmaral, Arystan, Yerzhan and Daryn.</p>
+    </div>
+  </footer>
+</body>
+</html>
