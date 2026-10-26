@@ -1,70 +1,63 @@
 "use strict";
 
-// Task 6: counter with click events.
+// Task 6
 let counter = 0;
-
 const counterValue = document.getElementById("counter-value");
-const increaseButton = document.getElementById("increase-button");
-const decreaseButton = document.getElementById("decrease-button");
-const resetButton = document.getElementById("reset-button");
 
-const updateCounter = () => {
+function updateCounter() {
   counterValue.textContent = counter;
-};
+}
 
-increaseButton.addEventListener("click", () => {
-  counter += 1;
+document.getElementById("increase-button").addEventListener("click", function () {
+  counter++;
   updateCounter();
 });
 
-decreaseButton.addEventListener("click", () => {
-  counter = Math.max(0, counter - 1);
+document.getElementById("decrease-button").addEventListener("click", function () {
+  if (counter > 0) {
+    counter--;
+  }
   updateCounter();
 });
 
-resetButton.addEventListener("click", () => {
+document.getElementById("reset-button").addEventListener("click", function () {
   counter = 0;
   updateCounter();
 });
 
-// Task 7: live text preview.
+// Task 7
 const previewInput = document.getElementById("preview-input");
 const previewText = document.getElementById("preview-text");
 const characterCount = document.getElementById("character-count");
-const clearPreviewButton = document.getElementById("clear-preview");
 
-const updatePreview = () => {
-  const text = previewInput.value;
-  const count = text.length;
+previewInput.addEventListener("input", function () {
+  previewText.textContent = previewInput.value || "Your text will appear here";
+  characterCount.textContent = previewInput.value.length;
+});
 
-  previewText.textContent = text === "" ? "Your text will appear here" : text;
-  characterCount.textContent = `${count} ${count === 1 ? "character" : "characters"}`;
-};
-
-previewInput.addEventListener("input", updatePreview);
-
-clearPreviewButton.addEventListener("click", () => {
+document.getElementById("clear-preview").addEventListener("click", function () {
   previewInput.value = "";
-  updatePreview();
+  previewText.textContent = "Your text will appear here";
+  characterCount.textContent = "0";
   previewInput.focus();
 });
 
-// Task 8: change an image with a select control.
-const imageOptions = {
-  study: {
-    src: "../../images/study-space.jpg",
-    alt: "Library and study space at Astana IT University",
-    caption: "AITU study space for reading and individual work.",
+// Task 8
+const sports = {
+  basketball: {
+    src: "images/basketball.png",
+    alt: "Basketball players during a match",
+    caption: "Basketball",
   },
-  campus: {
-    src: "../../images/campus-exterior.jpg",
-    alt: "Entrance to the Astana IT University campus",
-    caption: "The main entrance to the AITU campus.",
+  football: {
+    src: "images/football.png",
+    alt: "Football player taking a shot at the goal",
+    caption: "Football",
   },
-  arena: {
-    src: "../../images/cyber-arena.jpg",
-    alt: "Cyber Arena sports hall at Astana IT University",
-    caption: "AITU Cyber Arena for sports and student activities.",
+  tableTennis: {
+    src: "images/table-tennis.png",
+    alt: "Two players competing in table tennis",
+    caption: "Table tennis",
   },
 };
 
@@ -72,59 +65,58 @@ const imageSelect = document.getElementById("image-select");
 const selectedImage = document.getElementById("selected-image");
 const imageCaption = document.getElementById("image-caption");
 
-const updateImage = () => {
-  const selectedOption = imageOptions[imageSelect.value];
-  selectedImage.src = selectedOption.src;
-  selectedImage.alt = selectedOption.alt;
-  imageCaption.textContent = selectedOption.caption;
-};
+imageSelect.addEventListener("change", function () {
+  const sport = sports[imageSelect.value];
+  selectedImage.src = sport.src;
+  selectedImage.alt = sport.alt;
+  imageCaption.textContent = sport.caption;
+});
 
-imageSelect.addEventListener("change", updateImage);
-updateImage();
-
-// Task 9: keyboard events on one focused input.
-const keyboardForm = document.getElementById("keyboard-form");
+// Task 9
 const keyboardInput = document.getElementById("keyboard-input");
 const keyboardStatus = document.getElementById("keyboard-status");
 const keyboardResult = document.getElementById("keyboard-result");
 
-keyboardForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
-
-keyboardInput.addEventListener("keydown", (event) => {
-  keyboardStatus.textContent = `Key pressed: ${event.key}`;
+keyboardInput.addEventListener("keydown", function (event) {
+  keyboardStatus.textContent = "Key pressed: " + event.key;
 
   if (event.key === "Enter") {
     event.preventDefault();
-    const enteredText = keyboardInput.value.trim();
-    keyboardResult.textContent = enteredText === ""
-      ? "Enter some text first."
-      : `Submitted text: ${enteredText}`;
+    keyboardResult.textContent = keyboardInput.value;
   }
 
   if (event.key === "Escape") {
     keyboardInput.value = "";
     keyboardResult.textContent = "";
-    keyboardStatus.textContent = "Key pressed: Escape. Input and result cleared.";
   }
 });
 
-// Task 10: equivalent mouse and focus events.
+// Task 10
 const eventCard = document.getElementById("event-card");
 const eventInstruction = document.getElementById("event-instruction");
 
-const addHighlight = (eventName) => {
-  eventCard.classList.add("is-highlighted");
-  eventInstruction.textContent = `Highlight added by the ${eventName} event.`;
-};
+function addHighlight(eventName) {
+  eventCard.classList.add("highlight");
+  eventInstruction.textContent = eventName + " added the highlight.";
+}
 
-const removeHighlight = (eventName) => {
-  eventCard.classList.remove("is-highlighted");
-  eventInstruction.textContent = `Highlight removed by the ${eventName} event.`;
-};
+function removeHighlight(eventName) {
+  eventCard.classList.remove("highlight");
+  eventInstruction.textContent = eventName + " removed the highlight.";
+}
 
-eventCard.addEventListener("mouseenter", () => addHighlight("mouseenter"));
-eventCard.addEventListener("mouseleave", () => removeHighlight("mouseleave"));
-eventCard.addEventListener("focus", () => addHighlight("focus"));
-eventCard.addEventListener("blur", () => removeHighlight("blur"));
+eventCard.addEventListener("mouseenter", function () {
+  addHighlight("mouseenter");
+});
+
+eventCard.addEventListener("mouseleave", function () {
+  removeHighlight("mouseleave");
+});
+
+eventCard.addEventListener("focus", function () {
+  addHighlight("focus");
+});
+
+eventCard.addEventListener("blur", function () {
+  removeHighlight("blur");
+});
