@@ -1,6 +1,4 @@
 "use strict";
-
-// Task 6
 let counter = 0;
 const counterValue = document.getElementById("counter-value");
 
@@ -24,8 +22,6 @@ document.getElementById("reset-button").addEventListener("click", function () {
   counter = 0;
   showCounter();
 });
-
-// Task 7
 const previewInput = document.getElementById("preview-input");
 const previewText = document.getElementById("preview-text");
 const characterCount = document.getElementById("character-count");
@@ -43,8 +39,6 @@ document.getElementById("clear-preview").addEventListener("click", function () {
   updatePreview();
   previewInput.focus();
 });
-
-// Task 8
 const motorcycles = {
   r6: {
     src: "images/yamaha-r6.png",
@@ -73,8 +67,6 @@ imageSelect.addEventListener("change", function () {
   selectedImage.alt = motorcycle.alt;
   imageCaption.textContent = motorcycle.caption;
 });
-
-// Task 9
 const keyboardInput = document.getElementById("keyboard-input");
 const keyboardStatus = document.getElementById("keyboard-status");
 const keyboardResult = document.getElementById("keyboard-result");
@@ -92,8 +84,6 @@ keyboardInput.addEventListener("keydown", function (event) {
     keyboardResult.textContent = "";
   }
 });
-
-// Task 10
 const eventCard = document.getElementById("event-card");
 const eventInstruction = document.getElementById("event-instruction");
 

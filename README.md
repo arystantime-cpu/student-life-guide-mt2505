@@ -1,157 +1,51 @@
-# student-life-guide-mt2505
+# AITU Student Guide — MT-2505
 
-Aitu student guide
+A student website with study information, campus places, university links and first-week help. Built with HTML, CSS, JavaScript and jQuery. Forms are demonstrations: they do not send messages or create accounts. Tasks and theme choices last until reload.
 
-Our website allows freshmen and students studying there easily engage into the university's life and understand how the systems work. Explanation includes academic system, cmpus blocks, useful platforms and the main steps that are required to be complete by the end of the very first week of their studies.
+[Published website](https://arystantime-cpu.github.io/student-life-guide-mt2505/) · [Repository](https://github.com/arystantime-cpu/student-life-guide-mt2505)
 
-Project goal
+## Files
 
-The objective is to assist our newcomers find useful information about in a single website and make it as comfortable as possible, so they can get campus navigation, study rules and university services.
+| File | Purpose |
+| --- | --- |
+| `index.html` | Home, gallery and quick links |
+| `study.html` | Academic calendar, grading and study platforms |
+| `campus.html` | Map, six searchable places/services and contact links |
+| `start.html` | Welcome, theme, checklist, personal tasks and Quick answers |
+| `interactive.html` | Assignment 5 student tools, using shared jQuery code |
+| `forms.html` | Contact and registration practice |
+| `css/style.css`, `css/responsive.css` | Shared and responsive styles |
+| `css/forms.css` | Form styles |
+| `js/site.js` | Welcome/theme, FAQ animation, filters and task list |
+| `js/forms.js` | Form validation, password comparison and Reset |
+| `js/vendor/jquery-3.7.1.min.js` | Local jQuery with license notice |
+| `css/vendor/bootstrap.min.css` | Bootstrap 5.3.3 CSS; no Bootstrap JS/plugins |
+| `images/` | Existing university photos and diagrams |
+| `individual/arystan/`, `individual/Akmaral/` | Preserved Assignment 5 individual exercises |
 
-Pages and responsibilities
+## Run
 
-Member
-Work completed
-Details
-Akmaral Shyngazy
-campus.html
-She did the campus.html file, where she describes the places and opportunities for the students. She does the gallery of the places and does the grid of 3 meaningful elements of the CSS grid.
-Arystan Abdyshev
-study.html and integration
-Created the academic calendar, grading information, credits, syllabus, course requirements and study tools. Added the responsive stylesheet to all four pages and corrected misplaced campus content during integration.
-Daryn Takhir
-index.html and shared styling
-Created the home page introduction, quick guide, AITU gallery, useful links and footer. Contributed the shared CSS used for the site layout, cards, colours and typography.
-Yerzhan Adiman
-start.html
-Created the first-week checklist, essential platforms, support contacts and quick answers. Organised the content into grids, including six checklist cards.
+Download/clone the repository and open `index.html` in a browser, or open the folder in VS Code and use Live Server. No build or server-side application is required. Libraries are local; external university links require internet access.
 
+## Assignment 6 functions
 
+- **First Steps:** enter a name, switch theme, expand three Quick answers and add/remove tasks. Surrounding spaces are ignored; empty tasks are rejected. Task text is inserted as text, not HTML. The count and empty message update immediately. A notice fades while the task and status remain available.
+- **Campus Life:** combine labelled search with a category. Clear filters restores all six cards. Cards reuse project information, including support rooms from First Steps. Each links to the contact form. This is not a live university directory.
+- **Forms:** name is at least 2 characters, email must be valid and message is 10–500 characters. Errors appear beside fields. Registration retains required names/email/country, 8-character passwords, matching confirmation and Reset. Valid submissions show a demo confirmation only.
+- jQuery loads before project scripts, which initialize on DOM ready. Events include input, click, change, submit and reset. Task removal uses delegated `.on()`. FAQ animations clear the previous queue; reduced-motion preferences disable effects.
+- Native buttons support keyboard use. Fields have labels, FAQs update `aria-expanded`, statuses are announced and focus is visible.
 
+## Team and recorded contributions
 
-Main features
+| Member | Earlier work supported by Git history |
+| --- | --- |
+| Arystan Abdyshev | Study page (`2de23d8`, `f8377db`), responsive integration (`d830058`) and later Assignment 5 updates under `arystantime-cpu` |
+| Akmaral Shyngazy | Campus page and map navigation (`62ff18d`, `f1f3542`) |
+| Daryn Takhir | Home gallery/resource links (`7362dee`) and home updates under `karzovbojdaryn-byte` |
+| Yerzhan Adiman | First Steps content (`d906b60`) and contact section (`5ced824`) |
 
-- Four connected HTML pages
-- Shared navigation and footer
-- Responsive layouts for desktop, tablet and phone
-- Flexbox navigation and content components
-- Multiple CSS Grid layouts
-- Six-item checklist grid
-- Working links to LMS, Digital University, Microsoft 365 and the official AITU website
-- Semantic HTML and meaningful image alternative text
-- Bootstrap 5
-- JavaScript
-- HTML5 form validation
-- Assignment 5 Part 1 interactive page with five DOM and events tasks
+Assignment 6 is an integrated update committed through the existing account. This table records earlier contributions; it does not claim separate Assignment 6 commits or testing by each member. No commits were made under another member's identity.
 
-Technologies
+## Testing
 
-- HTML5
-- CSS3
-- Flexbox
-- CSS Grid
-- Media queries
-
-Project structure
-
-```text
-student-life-guide-mt2505/
-|-- index.html
-|-- study.html
-|-- campus.html
-|-- start.html
-|-- interactive.html
-|-- css/
-|   |-- style.css
-|   `-- responsive.css
-|-- js/
-|   `-- part1.js
-|-- images/
-`-- README.md
-```
-
-How to open the website
-
-1. Download or clone the repository.
-2. Open the project folder.
-3. Open `index.html` in a web browser.
-
-## Assignment 5 Part 1 Teamwork
-
-Open `interactive.html` directly or select **Interactive Guide** in the main navigation.
-
-The page contains all five required teamwork features:
-
-- Task 0: a labelled name input and personalised welcome message
-- Task 1: a reversible light and dark theme toggle
-- Task 2: four independent and keyboard-accessible FAQ items
-- Task 3: live, case-insensitive title search across six resource cards
-- Task 4: a dynamic personal checklist with validation, item removal and a live count
-
-All interactions are implemented in the external `js/part1.js` file with `addEventListener()` and plain JavaScript.
-
-
-Links
-
-- Repository: [student-life-guide-mt2505](https://github.com/arystantime-cpu/student-life-guide-mt2505)
-- GitHub Pages: [AITU Student Guide](https://arystantime-cpu.github.io/student-life-guide-mt2505/)
-
-The GitHub Pages link will work after Pages is enabled for the repository.
-
-Team
-
-- Akmaral Shyngazy
-- Arystan Abdyshev
-- Yerzhan Adiman
-- Daryn Takhir
-
-Assignment 5 — Forms and Validation
-
-How to open
-
-Open index.html and select "Open forms", or open forms.html directly.
-
-The forms use Bootstrap from a CDN, so an internet connection is needed
-for Bootstrap styling.
-
-### Assignment 5 Part 2 Arystan
-
-Open `individual/arystan/index.html` for Arystan Abdyshev's individual DOM and events exercises.
-
-The page contains:
-
-- Task 6: non-negative counter with Increase, Decrease and Reset buttons
-- Task 7: live text preview, character count and Clear button
-- Task 8: image, alt text and caption changes controlled by a select element
-- Task 9: key display with Enter submission and Escape clearing
-- Task 10: equivalent mouse and keyboard focus interactions
-
-The page uses the external `individual/arystan/script.js` file and does not require the browser console.
-
-Open `individual/Akmaral/index.html` for Akmaral Shyngazy's individual DOM and events exercises. The page includes Tasks 6-10 and uses Yamaha R6, R7 and R125 images in Task 8.
-
-Other members' individual exercise paths should be listed here when added.
-
-Contact form
-
-The form contains Name, Email and Message fields.
-
-- All fields are required.
-- Name: at least 2 characters.
-- Email: validated using type="email".
-- Message: 10–500 characters.
-- Bootstrap feedback appears after submitting.
-- A successful attempt displays a demonstration message.
-
-Registration form
-
-The form contains first name, last name, email, password,
-password confirmation, gender, interests and country.
-
-- First and last names: required, at least 2 characters.
-- Email: required and validated using type="email".
-- Passwords: required, at least 8 characters.
-- JavaScript checks that both passwords match.
-- Gender and interests are optional.
-- Country is required.
-- Reset clears the values and validation feedback.
+`TESTING.md` records actual public-site checks, browsers, viewports, expected/observed results and corrections. Screenshots are supplied separately in the evidence bundle. The project ZIP is exported from the final Git commit.
