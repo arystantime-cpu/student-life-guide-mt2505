@@ -17,6 +17,9 @@ $(function () {
       if (this.type === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
         this.setCustomValidity('Enter a valid email address.');
       }
+      if (field.attr('pattern') && value && !new RegExp(field.attr('pattern')).test(value)) {
+        this.setCustomValidity('Check the required format.');
+      }
     });
     if (form.id === 'registration-form') {
       const confirmation = $('#confirm-password')[0];
@@ -30,23 +33,44 @@ $(function () {
     return form.checkValidity();
   }
 
-  $('#contact-form, #registration-form').on('submit', function (event) {
+  $('#contact-form, #registration-form, #login-form').on('submit', function (event) {
     event.preventDefault();
     const valid = validate(this, true);
     $(this).addClass('was-validated');
     const status = $(this).find('[role="status"]');
+    
     if (valid) {
-      const message = this.id === 'contact-form'
-        ? 'Demo successful. Your contact form is valid. No message was sent.'
-        : 'Demo successful. Your registration is valid. No account was created.';
-      status.removeClass('text-danger').addClass('text-success').text(message);
+      if (this.id === 'registration-form') {
+        const user = {
+          name: $('#first-name').val() + ' ' + $('#last-name').val(),
+          email: $('#registration-email').val(),
+          password: $('#password').val(),
+          phone: $('#phone').val()
+        };
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        status.removeClass('text-danger').addClass('text-success').text('Registration successful! You can now log in.');
+      } else if (this.id === 'login-form') {
+        const storedUser = JSON.parse(localStorage.getItem('currentUser'));
+        const email = $('#login-email').val();
+        const password = $('#login-password').val();
+
+        if (storedUser && storedUser.email === email && storedUser.password === password) {
+          localStorage.setItem('isLoggedIn', 'true');
+          status.removeClass('text-danger').addClass('text-success').text('Login successful! Redirecting to profile...');
+          setTimeout(() => { window.location.href = 'profile.html'; }, 1000);
+        } else {
+          status.removeClass('text-success').addClass('text-danger').text('Invalid email or password.');
+        }
+      } else {
+        status.removeClass('text-danger').addClass('text-success').text('Message sent successfully!');
+      }
     } else {
       status.removeClass('text-success').addClass('text-danger').text('Please correct the highlighted fields.');
       $(this).find(':invalid').first().trigger('focus');
     }
   });
 
-  $('#contact-form, #registration-form').on('input change', function () {
+  $('#contact-form, #registration-form, #login-form').on('input change', function () {
     $(this).find('[role="status"]').text('');
     if ($(this).hasClass('was-validated')) {
       validate(this);

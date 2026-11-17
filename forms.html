@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -8,22 +7,52 @@
 <link href="css/vendor/bootstrap.min.css" rel="stylesheet"/>
 <link href="css/style.css" rel="stylesheet"/>
 <link href="css/responsive.css" rel="stylesheet"/>
-
 <link href="css/forms.css" rel="stylesheet"/><link href="data:," rel="icon"/></head>
 <body>
 <header class="site-header">
 <div class="container header-inner">
 <a class="logo" href="index.html">AITU Student Guide</a>
 <nav aria-label="Main navigation">
-<ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="study.html">Study</a></li><li><a href="campus.html">Campus Life</a></li><li><a href="start.html">First Steps</a></li><li><a href="interactive.html">Interactive Guide</a></li><li><a aria-current="page" class="active" href="forms.html">Forms</a></li></ul>
+<ul class="nav-list">
+<li><a href="index.html">Home</a></li>
+<li><a href="study.html">Study</a></li>
+<li><a href="campus.html">Campus Life</a></li>
+<li><a href="start.html">First Steps</a></li>
+<li><a href="interactive.html">Interactive Guide</a></li>
+<li><a aria-current="page" class="active" href="forms.html">Forms</a></li>
+<li><button aria-pressed="false" class="button theme-button" id="theme-toggle" type="button" style="padding: 5px 10px; margin-left: 15px;">Switch to dark theme</button></li>
+</ul>
 </nav>
 </div>
 </header>
 <main class="section">
 <div class="container">
 <h1>Contact and registration</h1>
-<p>These are demonstration forms. Use sample data.
-         No message is sent and no account is created.</p>
+<p>These are demonstration forms. Use sample data. No message is sent and no account is created.</p>
+
+<section class="form-panel mb-5">
+<h2>Log In</h2>
+<p>Access your student profile.</p>
+<form class="row g-3" id="login-form" novalidate="">
+<div class="col-md-6">
+<label class="form-label" for="login-email">Email</label>
+<input class="form-control" id="login-email" required="" type="email"/>
+<div class="invalid-feedback">Enter your registered email.</div>
+</div>
+<div class="col-md-6">
+<label class="form-label" for="login-password">Password</label>
+<input class="form-control" id="login-password" required="" type="password"/>
+<div class="invalid-feedback">Enter your password.</div>
+</div>
+<div class="col-12">
+<button class="btn btn-primary" type="submit">Log In</button>
+</div>
+<div class="col-12">
+<p class="mb-0" id="login-status" role="status"></p>
+</div>
+</form>
+</section>
+
 <section class="form-panel">
 <h2>Contact us</h2>
 <p>Ask a question about studying or campus life.</p>
@@ -31,28 +60,20 @@
 <div class="col-md-6">
 <label class="form-label" for="contact-name">Name</label>
 <input aria-describedby="contact-name-error" autocomplete="name" class="form-control" id="contact-name" minlength="2" name="name" required="" type="text"/>
-<div class="invalid-feedback" id="contact-name-error">
-              Enter a name with at least 2 characters.
-            </div>
+<div class="invalid-feedback" id="contact-name-error">Enter a name with at least 2 characters.</div>
 <div class="valid-feedback">Looks good.</div>
 </div>
 <div class="col-md-6">
 <label class="form-label" for="contact-email">Email</label>
 <input aria-describedby="contact-email-error" autocomplete="email" class="form-control" id="contact-email" name="email" required="" type="email"/>
-<div class="invalid-feedback" id="contact-email-error">
-              Enter a valid email address.
-            </div>
+<div class="invalid-feedback" id="contact-email-error">Enter a valid email address.</div>
 <div class="valid-feedback">Looks good.</div>
 </div>
 <div class="col-12">
 <label class="form-label" for="contact-message">Message</label>
 <textarea aria-describedby="message-help message-error" class="form-control" id="contact-message" maxlength="500" minlength="10" name="message" required="" rows="4"></textarea>
-<div class="form-text" id="message-help">
-              Write between 10 and 500 characters.
-            </div>
-<div class="invalid-feedback" id="message-error">
-              Your message must contain 10–500 characters.
-            </div>
+<div class="form-text" id="message-help">Write between 10 and 500 characters.</div>
+<div class="invalid-feedback" id="message-error">Your message must contain 10–500 characters.</div>
 <div class="valid-feedback">Looks good.</div>
 </div>
 <div class="col-12">
@@ -63,6 +84,7 @@
 </div>
 </form>
 </section>
+
 <section class="form-panel">
 <h2>Student registration</h2>
 <p>Practise completing a registration form for AITU Student Guide.</p>
@@ -70,88 +92,68 @@
 <div class="col-md-6">
 <label class="form-label" for="first-name">First name</label>
 <input aria-describedby="first-name-error" autocomplete="given-name" class="form-control" id="first-name" minlength="2" name="firstName" required="" type="text"/>
-<div class="invalid-feedback" id="first-name-error">
-              Enter at least 2 characters.
-            </div>
+<div class="invalid-feedback" id="first-name-error">Enter at least 2 characters.</div>
 <div class="valid-feedback">Looks good.</div>
 </div>
 <div class="col-md-6">
 <label class="form-label" for="last-name">Last name</label>
 <input aria-describedby="last-name-error" autocomplete="family-name" class="form-control" id="last-name" minlength="2" name="lastName" required="" type="text"/>
-<div class="invalid-feedback" id="last-name-error">
-              Enter at least 2 characters.
-            </div>
+<div class="invalid-feedback" id="last-name-error">Enter at least 2 characters.</div>
 <div class="valid-feedback">Looks good.</div>
 </div>
 <div class="col-12">
 <label class="form-label" for="registration-email">Email</label>
 <input aria-describedby="registration-email-error" autocomplete="email" class="form-control" id="registration-email" name="email" required="" type="email"/>
-<div class="invalid-feedback" id="registration-email-error">
-              Enter a valid email address.
-            </div>
+<div class="invalid-feedback" id="registration-email-error">Enter a valid email address.</div>
+<div class="valid-feedback">Looks good.</div>
+</div>
+<div class="col-md-6">
+<label class="form-label" for="phone">Phone Number</label>
+<input aria-describedby="phone-error" class="form-control" id="phone" name="phone" required="" pattern="^\+?[0-9\s\-]{10,15}$" type="text" placeholder="+7 777 000 00 00"/>
+<div class="invalid-feedback" id="phone-error">Enter a valid phone number (e.g. +7 777 000 00 00).</div>
 <div class="valid-feedback">Looks good.</div>
 </div>
 <div class="col-md-6">
 <label class="form-label" for="password">Password</label>
 <input aria-describedby="password-help password-error" autocomplete="new-password" class="form-control" id="password" minlength="8" name="password" required="" type="password"/>
-<div class="form-text" id="password-help">
-              Use at least 8 characters. Use a sample password.
-            </div>
-<div class="invalid-feedback" id="password-error">
-              Enter a password with at least 8 characters.
-            </div>
+<div class="form-text" id="password-help">Use at least 8 characters. Use a sample password.</div>
+<div class="invalid-feedback" id="password-error">Enter a password with at least 8 characters.</div>
 <div class="valid-feedback">Looks good.</div>
 </div>
 <div class="col-md-6">
-<label class="form-label" for="confirm-password">
-              Confirm password
-            </label>
+<label class="form-label" for="confirm-password">Confirm password</label>
 <input aria-describedby="confirm-password-error" autocomplete="new-password" class="form-control" id="confirm-password" minlength="8" name="confirmPassword" required="" type="password"/>
-<div class="invalid-feedback" id="confirm-password-error">
-              Enter at least 8 characters and match the first password.
-            </div>
+<div class="invalid-feedback" id="confirm-password-error">Enter at least 8 characters and match the first password.</div>
 <div class="valid-feedback">Passwords match.</div>
 </div>
 <fieldset class="col-12">
 <legend>Gender — optional</legend>
 <div class="form-check form-check-inline">
 <input class="form-check-input" id="gender-female" name="gender" type="radio" value="female"/>
-<label class="form-check-label" for="gender-female">
-                Female
-              </label>
+<label class="form-check-label" for="gender-female">Female</label>
 </div>
 <div class="form-check form-check-inline">
 <input class="form-check-input" id="gender-male" name="gender" type="radio" value="male"/>
-<label class="form-check-label" for="gender-male">
-                Male
-              </label>
+<label class="form-check-label" for="gender-male">Male</label>
 </div>
 <div class="form-check form-check-inline">
 <input class="form-check-input" id="gender-private" name="gender" type="radio" value="not-stated"/>
-<label class="form-check-label" for="gender-private">
-                Prefer not to say
-              </label>
+<label class="form-check-label" for="gender-private">Prefer not to say</label>
 </div>
 </fieldset>
 <fieldset class="col-12">
 <legend>Interests — optional</legend>
 <div class="form-check form-check-inline">
 <input class="form-check-input" id="interest-coding" name="interests" type="checkbox" value="coding"/>
-<label class="form-check-label" for="interest-coding">
-                Coding
-              </label>
+<label class="form-check-label" for="interest-coding">Coding</label>
 </div>
 <div class="form-check form-check-inline">
 <input class="form-check-input" id="interest-sport" name="interests" type="checkbox" value="sport"/>
-<label class="form-check-label" for="interest-sport">
-                Sport
-              </label>
+<label class="form-check-label" for="interest-sport">Sport</label>
 </div>
 <div class="form-check form-check-inline">
 <input class="form-check-input" id="interest-music" name="interests" type="checkbox" value="music"/>
-<label class="form-check-label" for="interest-music">
-                Music
-              </label>
+<label class="form-check-label" for="interest-music">Music</label>
 </div>
 </fieldset>
 <div class="col-12">
@@ -165,16 +167,12 @@
 <option value="China">China</option>
 <option value="Other">Other</option>
 </select>
-<div class="invalid-feedback" id="country-error">
-              Select a country.
-            </div>
+<div class="invalid-feedback" id="country-error">Select a country.</div>
 <div class="valid-feedback">Looks good.</div>
 </div>
 <div class="col-12">
 <button class="btn btn-primary" type="submit">Submit</button>
-<button class="btn btn-outline-secondary" type="reset">
-              Reset
-            </button>
+<button class="btn btn-outline-secondary" type="reset">Reset</button>
 </div>
 <div class="col-12">
 <p class="mb-0" id="registration-status" role="status"></p>
@@ -190,5 +188,8 @@
 </div>
 </footer>
 
-<script src="js/vendor/jquery-3.7.1.min.js"></script><script src="js/forms.js"></script></body>
+<script src="js/vendor/jquery-3.7.1.min.js"></script>
+<script src="js/site.js"></script>
+<script src="js/forms.js"></script>
+</body>
 </html>

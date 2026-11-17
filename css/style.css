@@ -8,6 +8,7 @@ body {
   background-color: #f8fafc;
   font-family: Arial, sans-serif;
   line-height: 1.5;
+  overflow-wrap: anywhere;
 }
 
 h1,
@@ -67,10 +68,12 @@ img {
   font-size: 20px;
   font-weight: bold;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .nav-list {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
@@ -79,6 +82,8 @@ img {
 }
 
 .nav-list a {
+  display: inline-block;
+  padding: 8px 0;
   font-weight: bold;
   text-decoration: none;
 }
@@ -108,6 +113,7 @@ img {
 .hero-text,
 .hero-image {
   flex: 1;
+  min-width: 0;
 }
 
 .hero-image img {
@@ -120,14 +126,18 @@ img {
   padding: 12px 20px;
   color: #ffffff;
   background-color: #40566c;
+  border: 0;
   border-radius: 7px;
+  cursor: pointer;
   font-weight: bold;
   text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .button:hover,
 .button:focus {
   background-color: #263c52;
+  transform: translateY(-2px);
 }
 
 .grid {
@@ -148,6 +158,13 @@ img {
   background-color: #ffffff;
   border: 1px solid #d9e2ec;
   border-radius: 10px;
+  min-width: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(38, 60, 82, 0.12);
 }
 
 .card img {
@@ -310,6 +327,7 @@ img {
   background-color: #ffffff;
   border: 1px solid #d9e2ec;
   border-radius: 10px;
+  min-width: 0;
 }
 
 .platform-grid,
@@ -324,7 +342,6 @@ img {
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
 
 .interactive-hero {
   padding: 72px 0;
@@ -587,6 +604,61 @@ img {
   background-color: #e8c6c9;
 }
 
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+figure {
+  margin: 0;
+}
+
+.filter-controls {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.filter-controls > div {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.filter-controls label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.filter-controls input,
+.filter-controls select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #748da6;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #263c52;
+}
+
+.task-notice {
+  display: none;
+  padding: 10px;
+  background: #e5e3ec;
+  color: #263c52;
+}
+
+.error-text {
+  color: #a32432;
+}
+
+.dynamic-list span {
+  min-width: 0;
+}
+
 .dark-theme {
   color: #dbe7f2;
   background-color: #101b26;
@@ -595,11 +667,13 @@ img {
 .dark-theme h1,
 .dark-theme h2,
 .dark-theme h3,
+.dark-theme h5,
 .dark-theme .logo,
 .dark-theme .interactive-panel label,
 .dark-theme .search-control label,
 .dark-theme .result-count,
-.dark-theme .item-count {
+.dark-theme .item-count,
+.dark-theme .icon {
   color: #f4f8fb;
 }
 
@@ -607,8 +681,17 @@ img {
 .dark-theme .interactive-panel,
 .dark-theme .faq-item,
 .dark-theme .guide-card,
-.dark-theme .no-results {
+.dark-theme .no-results,
+.dark-theme .hero,
+.dark-theme .card,
+.dark-theme .step-card,
+.dark-theme .calendar-item,
+.dark-theme .grade-item,
+.dark-theme .card-pink,
+.dark-theme .card-lavender,
+.dark-theme .card-blue {
   background-color: #172737;
+  color: #dbe7f2;
   border-color: #40566c;
 }
 
@@ -630,7 +713,9 @@ img {
 
 .dark-theme .control-row input,
 .dark-theme .search-control input,
-.dark-theme .dynamic-list li {
+.dark-theme .dynamic-list li,
+.dark-theme .filter-controls input,
+.dark-theme .filter-controls select {
   color: #f4f8fb;
   background-color: #101b26;
   border-color: #56718a;
@@ -657,93 +742,6 @@ img {
   background-color: #f2d7d9;
 }
 
-[hidden] {
-  display: none !important;
-}
-
-body {
-  overflow-wrap: anywhere;
-}
-
-button, input, select, textarea {
-  font: inherit;
-}
-
-.button {
-  border: 0;
-  cursor: pointer;
-}
-
-.logo {
-  flex-shrink: 0;
-}
-
-.nav-list a {
-  display: inline-block;
-  padding: 8px 0;
-}
-
-.hero-text, .hero-image, .card, .step-card {
-  min-width: 0;
-}
-
-figure {
-  margin: 0;
-}
-
-.filter-controls {
-  display: flex;
-  align-items: end;
-  flex-wrap: wrap;
-  gap: 16px;
-  margin: 20px 0;
-}
-
-.filter-controls > div {
-  flex: 1 1 220px;
-  min-width: 0;
-}
-
-.filter-controls label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-.filter-controls input, .filter-controls select {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #748da6;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #263c52;
-}
-
-.task-notice {
-  display: none;
-  padding: 10px;
-  background: #e5e3ec;
-  color: #263c52;
-}
-
-.error-text {
-  color: #a32432;
-}
-
-.dynamic-list span {
-  min-width: 0;
-}
-
-.dark-theme .hero, .dark-theme .card, .dark-theme .step-card {
-  background: #172737;
-  color: #dbe7f2;
-}
-
-.dark-theme .filter-controls input, .dark-theme .filter-controls select {
-  background: #101b26;
-  color: #f4f8fb;
-}
-
 .dark-theme :focus-visible {
   outline-color: #f2d7d9;
 }
@@ -754,4 +752,8 @@ figure {
 
 .dark-theme .nav-list a:hover {
   color: #f2d7d9;
+}
+
+[hidden] {
+  display: none !important;
 }
